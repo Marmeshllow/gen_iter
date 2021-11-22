@@ -38,7 +38,7 @@ def flat_generator(nested_list):
 
 
 if __name__ == '__main__':
-    # for item in FlatIterator(nested_lst):
-    #     print(item)
+    for item in FlatIterator(nested_lst):
+        print(item)
     for item in flat_generator(nested_lst):
         print(item)

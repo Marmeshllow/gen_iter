@@ -37,8 +37,20 @@ def flat_generator(nested_list):
         cursor += 1
 
 
+def flat_generator2(my_list):
+    for el in my_list:
+        if isinstance(el, list):
+            yield from flat_generator2(el)
+        else:
+            yield el
+
+
 if __name__ == '__main__':
     for item in FlatIterator(nested_lst):
         print(item)
+
     for item in flat_generator(nested_lst):
+        print(item)
+
+    for item in flat_generator2(nested_lst):
         print(item)
